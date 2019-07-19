@@ -1,5 +1,7 @@
 var dt = new Date();
-document.getElementById("date").innerHTML = dt;
+var tm = new time();
+document.getElementById("date").innerHTML = dt.toLocaleDateString();
+document.getElementById("time").innerHTML = tm.toLocaleDateString();
 window.onload = function() {
 
     var inputvalue = document.getElementById('getValue');
@@ -70,7 +72,7 @@ function refreshlist() {
                 outputvalue.innerHTML +=
                     "<div class='text'>" +
                     "<input class='checker' type='checkbox' checked id=" + t + " onclick='strikethrough(this)'>" +
-                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + stdata[t].task + "</div>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;" + stdata[t].task + "</div>" +
                     "<i class='fa fa-ban' aria-hidden='true'  id=" + (t + 1000) + " onclick='delet(this)' ></i>" +
                     "<br>";
             } else {
